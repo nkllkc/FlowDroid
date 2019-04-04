@@ -56,11 +56,14 @@ public class JUnitTests {
 	 */
 	public InfoflowResults analyzeAPKFile(String fileName, boolean enableImplicitFlows, boolean enableStaticFields,
 			boolean flowSensitiveAliasing) throws IOException, XmlPullParserException {
-		String androidJars = System.getenv("ANDROID_JARS");
-		if (androidJars == null)
-			androidJars = System.getProperty("ANDROID_JARS");
-		if (androidJars == null)
-			throw new RuntimeException("Android JAR dir not set");
+		String androidJars = "/home/nikola/Development/FlowDroid/AndroidJars";
+							// System.getenv("ANDROID_JARS");
+//		if (androidJars == null)
+//			androidJars = System.getProperty("ANDROID_JARS");
+//		if (androidJars == null)
+////			throw new RuntimeException("Android JAR dir not set");
+
+
 		System.out.println("Loading Android.jar files from " + androidJars);
 
 		SetupApplication setupApplication = new SetupApplication(androidJars, fileName);

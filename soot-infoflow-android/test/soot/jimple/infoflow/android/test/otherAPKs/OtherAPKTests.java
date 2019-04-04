@@ -9,7 +9,18 @@ import org.xmlpull.v1.XmlPullParserException;
 import soot.jimple.infoflow.results.InfoflowResults;
 
 public class OtherAPKTests extends JUnitTests {
-	
+
+	@Test
+	public void test() throws IOException, XmlPullParserException {
+		InfoflowResults res = analyzeAPKFile
+				("/home/nikola/Development/FlowDroid/ContentProviderApks/app-debug-just-execute.apk",
+						true,
+						true,
+						true);
+		Assert.assertNotNull(res);
+		Assert.assertTrue(res.size() > 0);
+	}
+
 	@Test
 	public void runTest1() throws IOException, XmlPullParserException {
 		InfoflowResults res = analyzeAPKFile

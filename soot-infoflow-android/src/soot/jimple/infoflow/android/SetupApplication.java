@@ -573,6 +573,12 @@ public class SetupApplication implements ITaintWrapperDataFlowAnalysis {
 
 		// Make sure that we have a hierarchy
 		Scene.v().getOrMakeFastHierarchy();
+
+//		try {
+//			CallgraphPrinter.printGraph(Scene.v().getCallGraph());
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	/**
@@ -1447,6 +1453,7 @@ public class SetupApplication implements ITaintWrapperDataFlowAnalysis {
 				perfData.setTotalRuntimeSeconds((int) Math.round((System.nanoTime() - beforeEntryPoint) / 1E9));
 			}
 		}
+
 
 		// We don't need the computed callbacks anymore
 		this.callbackMethods.clear();
